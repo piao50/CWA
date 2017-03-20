@@ -61,6 +61,15 @@ Analytical Instruments:
 • Operator Skill Level
 • Training Requirements
 
+== Equipment Usage Categories ==
+• Handheld-portable detection equipment.
+• Handheld-stationary detection equipment.
+• Vehicle-mounted detection equipment.
+• Fixed-site detection systems.
+• Fixed-site analytical laboratory systems.
+• Standoff detection systems.
+• Detection systems with limited data.
+
 
 
 
