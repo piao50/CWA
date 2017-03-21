@@ -20,6 +20,23 @@ SPI Communication:
 +----------------------------------------------------------------------+
 
 Sensor List:
++--------------------------------------------------------------------------------------+
+|       NAME              |   ID        | VALUE RANGE | ERROR STATUS                   |
++--------------------------------------------------------------------------------------+
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
+|    Temperature          | VALUE_Intlet| 30-1000     | 0 - Normal, 1 - High, 2 - Low  |
++--------------------------------------------------------------------------------------+
 
 
 Definition:
@@ -33,7 +50,6 @@ STRUCT_xxx {
 };
 
 DATA_xxx {
-	AMOUNT,
 	LENGTH,
 	DATA[..]
 };
