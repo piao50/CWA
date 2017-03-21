@@ -65,7 +65,8 @@ int main(int argc, char** argv)
 		return -1;
 	}
 	
-	if(count++ % 100 == 0)
+	count++;
+	if(count % 100 == 0)
 		printf("count: %d\n", count);
 	usleep(100 * 1000);
 	}
