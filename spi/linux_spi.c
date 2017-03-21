@@ -22,6 +22,7 @@ int main(int argc, char** argv)
 		.rx_buf = (unsigned long) recv,
 		.len = 2,
 	};
+	uint64_t count = 0;
 
 	if ((file = open(DEVICE, O_RDWR)) < 0){
 		perror("SPI: Can't open device.");
@@ -56,9 +57,17 @@ int main(int argc, char** argv)
 	printf("Bits per word: %d\n", bits);
 	printf("Speed: %d Hz\n", speed);
 
+	while(1)
+	{
+
 	if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer) < 0){
 		perror("Failed to send SPI message");
 		return -1;
+	}
+	
+	if(count++ % 100 == 0)
+		printf("count: %d\n", count);
+	usleep(100 * 1000);
 	}
 
 	close(file);
