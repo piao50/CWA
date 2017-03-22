@@ -1,2 +1,3 @@
 *.pro.user
 QT/build-*
+spi/spi
