@@ -67,6 +67,7 @@ int main(int argc, char** argv)
 		
 	if(++count % 100 == 0)
 		printf("count: %llu\n", count);
+	usleep(100 * 1000);
 	}
 
 	close(file);
