@@ -12,6 +12,10 @@
 /* SPI_Clock_Phase */
 // #define SPI_CPHA_1Edge                  ((uint16_t)0x0000)
 // #define SPI_CPHA_2Edge                  ((uint16_t)0x0001)
+/* SPI_MSB_LSB_transmission */
+//#define SPI_FirstBit_MSB                ((uint16_t)0x0000)
+//#define SPI_FirstBit_LSB                ((uint16_t)0x0080)
+
 #endif
 
 #ifdef LINUX
