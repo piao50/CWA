@@ -2,7 +2,12 @@
 #define CWA_SPI_H
 
 #ifdef STM32
-
+/* SPI_Clock_Polarity */
+// #define SPI_CPOL_Low                    ((uint16_t)0x0000)
+// #define SPI_CPOL_High                   ((uint16_t)0x0002)
+/* SPI_Clock_Phase */
+// #define SPI_CPHA_1Edge                  ((uint16_t)0x0000)
+// #define SPI_CPHA_2Edge                  ((uint16_t)0x0001)
 #endif
 
 
