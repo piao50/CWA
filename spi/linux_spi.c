@@ -10,10 +10,11 @@
 #include "cwa_spi.h"
 
 static const char *DEVICE = "/dev/spidev0.0";
+#define BUFFERSIZE 20
 
 int main(int argc, char** argv)
 {
-	unsigned char send[2], recv[2];
+	unsigned char send[BUFFERSIZE], recv[BUFFERSIZE];
 	uint8_t mode = 3, bits = 8;
 	uint32_t speed = 5 * 1000 * 1000;
 	int file;
@@ -23,6 +24,7 @@ int main(int argc, char** argv)
 		.len = 2,
 	};
 	uint64_t count = 0;
+	int i = 0;
 
 	if ((file = open(DEVICE, O_RDWR)) < 0){
 		perror("SPI: Can't open device.");
@@ -57,17 +59,24 @@ int main(int argc, char** argv)
 	printf("Bits per word: %d\n", bits);
 	printf("Speed: %d Hz\n", speed);
 
+	for(i = 0; i < BUFFERSIZE; i++)
+		send[i] = '0' + (i % 10);
+
 	while(1)
 	{
 
-	if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer) < 0){
-		perror("Failed to send SPI message");
-		return -1;
-	}
+		if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer) < 0){
+			perror("Failed to send SPI message");
+			return -1;
+		}
 		
-	if(++count % 100 == 0)
-		printf("count: %llu\n", count);
-	usleep(100 * 1000);
+		if(++count % 10 == 0)
+		{
+			for(i = 0; i < BUFFERSIZE; i++)
+				printf("%02X ", send[i]);
+			printf("count: %llu\n", count);
+		}
+		usleep(100 * 1000);
 	}
 
 	close(file);
