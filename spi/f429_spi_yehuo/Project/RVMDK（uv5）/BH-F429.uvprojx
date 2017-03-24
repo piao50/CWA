@@ -701,7 +701,7 @@
             <File>
               <FileName>spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\User\spi.c</FilePath>
+              <FilePath>.\spi.c</FilePath>
             </File>
           </Files>
         </Group>
