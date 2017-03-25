@@ -7,17 +7,18 @@
 #include <sys/ioctl.h>
 #include <linux/spi/spidev.h>
 
-#include "cwa_spi.h"
+#include "spi.h"
 
 static const char *DEVICE = "/dev/spidev0.0";
-#define BUFFERSIZE 100
+#define BUFFERSIZE 20
 
 int main(int argc, char** argv)
 {
   unsigned char send[BUFFERSIZE] = "hello";
   unsigned char recv[BUFFERSIZE] = {0};
+  unsigned char info[BUFFERSIZE+1] = {0};
 	uint8_t mode = 3, bits = 8;
-	uint32_t speed = 5 * 1000 * 1000;
+	uint32_t speed = 1 * 100 * 1000;
 	int file;
 	struct spi_ioc_transfer transfer = {
 		.tx_buf = (unsigned long) send,
@@ -79,6 +80,8 @@ int main(int argc, char** argv)
 			for(i = 0; i < BUFFERSIZE; i++)
 			  printf("%02X ", recv[i]);
 			printf("count: %llu\n", count);
+			memset(info, 0, sizeof(info));
+			memcpy(info, recv, sizeof(recv));
 			printf("  %s\r\n", recv);
 
 			//			memset(send, 0, BUFFERSIZE);
