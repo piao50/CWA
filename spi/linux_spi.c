@@ -18,7 +18,7 @@ int main(int argc, char** argv)
   unsigned char recv[BUFFERSIZE] = {0};
   unsigned char info[BUFFERSIZE+1] = {0};
 	uint8_t mode = 3, bits = 8;
-	uint32_t speed = 1 * 100 * 1000;
+	uint32_t speed = 1 * 1000 * 1000;
 	int file;
 	struct spi_ioc_transfer transfer = {
 		.tx_buf = (unsigned long) send,
