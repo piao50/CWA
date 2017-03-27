@@ -1,5 +1,5 @@
-#ifndef CWA_SPI_H
-#define CWA_SPI_H
+#ifndef SPI_H
+#define SPI_H
 
 #ifdef __cplusplus
  extern "C" {

@@ -7,21 +7,23 @@
 #include <sys/ioctl.h>
 #include <linux/spi/spidev.h>
 
-#include "cwa_spi.h"
+#include "spi.h"
 
 static const char *DEVICE = "/dev/spidev0.0";
 #define BUFFERSIZE 20
 
 int main(int argc, char** argv)
 {
-	unsigned char send[BUFFERSIZE], recv[BUFFERSIZE];
+  unsigned char send[BUFFERSIZE] = "hello";
+  unsigned char recv[BUFFERSIZE] = {0};
+  unsigned char info[BUFFERSIZE+1] = {0};
 	uint8_t mode = 3, bits = 8;
-	uint32_t speed = 5 * 1000 * 1000;
+	uint32_t speed = 1 * 1000 * 1000;
 	int file;
 	struct spi_ioc_transfer transfer = {
 		.tx_buf = (unsigned long) send,
 		.rx_buf = (unsigned long) recv,
-		.len = 2,
+		.len = BUFFERSIZE,
 	};
 	uint64_t count = 0;
 	int i = 0;
@@ -59,8 +61,8 @@ int main(int argc, char** argv)
 	printf("Bits per word: %d\n", bits);
 	printf("Speed: %d Hz\n", speed);
 
-	for(i = 0; i < BUFFERSIZE; i++)
-		send[i] = '0' + (i % 10);
+	//	for(i = 0; i < BUFFERSIZE; i++)
+	//	send[i] = '0' + (i % 10);
 
 	while(1)
 	{
@@ -70,13 +72,31 @@ int main(int argc, char** argv)
 			return -1;
 		}
 		
-		if(++count % 10 == 0)
+		if(++count % 100 == 0)
 		{
 			for(i = 0; i < BUFFERSIZE; i++)
 				printf("%02X ", send[i]);
+			printf("\n");
+			for(i = 0; i < BUFFERSIZE; i++)
+			  printf("%02X ", recv[i]);
 			printf("count: %llu\n", count);
+			memset(info, 0, sizeof(info));
+			memcpy(info, recv, sizeof(recv));
+			printf("  %s\r\n", recv);
+
+			//			memset(send, 0, BUFFERSIZE);
+			if(strcmp(send, "hello") == 0)
+			{
+			  memset(send , 0, BUFFERSIZE);
+			  sprintf(send, "VALUE_xx1");
+			}
+			else
+			{
+			  memset(send, 0, BUFFERSIZE);
+			  sprintf(send, "hello");
+			}
 		}
-		usleep(100 * 1000);
+		usleep(10 * 1000);
 	}
 
 	close(file);
