@@ -179,3 +179,49 @@
 #define SPLIT         ":"
 
 #endif
+
+void DMA2_Stream4_IRQHandler(void)
+{
+	
+}
+
+void DMA2_Stream5_IRQHandler(void)
+{
+		uint32_t index;
+  /* Disable DMA SPI TX Stream */
+  DMA_Cmd(IMS_SPI_TX_DMA_STREAM,DISABLE); 
+	DMA_Cmd(IMS_SPI_RX_DMA_STREAM,DISABLE);
+  /* Disable SPI DMA TX Requsts */
+  SPI_I2S_DMACmd(SPIx, SPI_I2S_DMAReq_Tx, DISABLE);
+	SPI_I2S_DMACmd(SPIx, SPI_I2S_DMAReq_Rx, DISABLE);
+
+	memset(aTxBuffer, 0, BUFFERSIZE);
+	
+	if(Buffercmp(CMD_HELLO, aRxBuffer, strlen(CMD_HELLO)) == PASSED)
+	{
+		for(index = 0; index < strlen(CMD_HELLO); index++)
+			aTxBuffer[index] = aRxBuffer[index];
+	}
+  if(Buffercmp(CMD_VALUE_xx1, aRxBuffer, strlen(CMD_VALUE_xx1)) == PASSED)
+	{
+		for(index = 0; index < strlen(CMD_VALUE_xx1); index++)
+			aTxBuffer[index] = aRxBuffer[index];
+		aTxBuffer[index++] = ':';
+		sprintf((aTxBuffer+index), "%f", 88.9f);
+	}
+
+//	for(index = 0; index < BUFFERSIZE; index++)
+//		aTxBuffer[index] = 'A' + (index % 26);
+	
+ /* Clear DMA Transfer Complete Flags */
+  DMA_ClearFlag(IMS_SPI_TX_DMA_STREAM,IMS_SPI_TX_DMA_FLAG_TCIF);
+  DMA_ClearFlag(IMS_SPI_RX_DMA_STREAM,IMS_SPI_RX_DMA_FLAG_TCIF); 
+	
+	/* Enable DMA SPI TX Stream */
+  DMA_Cmd(IMS_SPI_TX_DMA_STREAM,ENABLE);
+	DMA_Cmd(IMS_SPI_RX_DMA_STREAM,ENABLE);
+
+  /* Enable SPI DMA TX Requsts */
+  SPI_I2S_DMACmd(SPIx, SPI_I2S_DMAReq_Tx, ENABLE);
+	SPI_I2S_DMACmd(SPIx, SPI_I2S_DMAReq_Rx, ENABLE);
+}
