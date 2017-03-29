@@ -71,6 +71,7 @@ int main(int argc, char** argv)
 	while(1)
 	{
     	  count++;
+	  printf("\r\n\r\n");
 	        // send data HELLO
 		memset(send, 0, BUFFERSIZE);
 		memset(recv, 0, BUFFERSIZE);
@@ -88,6 +89,7 @@ int main(int argc, char** argv)
 		memset(info, 0, sizeof(info));
 		memcpy(info, recv, sizeof(recv));
 		printf("  %s\r\n", recv);
+		
 		// recv data HELLO
 		unsigned char *send_reply;
 		unsigned char *recv_reply;
@@ -99,9 +101,11 @@ int main(int argc, char** argv)
 		send_reply = (char *)malloc(REPLY_LEN_CMD_HELLO * sizeof(char)); 
 		if(send_reply == NULL)
 			exit(1);
+		memset(send_reply, 0, REPLY_LEN_CMD_HELLO);
 		recv_reply = (char *)malloc(REPLY_LEN_CMD_HELLO * sizeof(char)); 
 		if(recv_reply == NULL)
 			exit(1);
+		memset(recv_reply, 0, REPLY_LEN_CMD_HELLO);
 		transfer_reply.tx_buf = (unsigned long) send_reply;
 		transfer_reply.rx_buf = (unsigned long) recv_reply;
 		transfer_reply.len = REPLY_LEN_CMD_HELLO;
