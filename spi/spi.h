@@ -28,11 +28,11 @@
 #endif
 
 #define CMD_HELLO "hello"
-#define RECV_LEN_CMD_HELLO 5
+#define REPLY_LEN_CMD_HELLO 5
 #define CMD_VALUE_xx1 "VALUE_xx1"
-#define RECV_LEN_CMD_VALUE_xx1 16
+#define REPLY_LEN_CMD_VALUE_xx1 16
 #define CMD_DATA "DATA"
-#define RECV_LEN_CMD_DATA 8005   
+#define REPLY_LEN_CMD_DATA 8005   
    
 #ifdef __cplusplus
 }
