@@ -69,8 +69,6 @@ int main(int argc, char** argv)
 	printf("Speed: %d Hz\n", speed);
 	while(1)
 	{
-    	  count++;
-	  printf("\r\n\r\n");
 	        // send data HELLO
 		if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer) < 0){
 			perror("Failed to send SPI message");
@@ -110,7 +108,7 @@ int main(int argc, char** argv)
 			  sprintf(send, "hello");
 			}
 		}
-		usleep(1000 * 1000);
+		usleep(10 * 1000);
 	}
 
 	close(file);
