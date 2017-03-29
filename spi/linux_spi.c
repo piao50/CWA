@@ -70,6 +70,7 @@ int main(int argc, char** argv)
 
 	while(1)
 	{
+    	  count++;
 	        // send data HELLO
 		memset(send, 0, BUFFERSIZE);
 		memset(recv, 0, BUFFERSIZE);
@@ -83,33 +84,31 @@ int main(int argc, char** argv)
 		printf("\n");
 		for(i = 0; i < BUFFERSIZE; i++)
 			printf("%02X ", recv[i]);
-		printf("count: %llu\n", count);
+		printf("send count: %llu\n", count);
 		memset(info, 0, sizeof(info));
 		memcpy(info, recv, sizeof(recv));
 		printf("  %s\r\n", recv);
 		// recv data HELLO
-		send_reply = (unsigned char *)malloc(REPLY_LEN_CMD_HELLO * sizeof(char)); 
+		send_reply = (char *)malloc(REPLY_LEN_CMD_HELLO * sizeof(char)); 
 		if(send_reply == NULL)
 			exit(1);
-		recv_reply = (unsigned char *)malloc(REPLY_LEN_CMD_HELLO * sizeof(char)); 
+		recv_reply = (char *)malloc(REPLY_LEN_CMD_HELLO * sizeof(char)); 
 		if(recv_reply == NULL)
 			exit(1);
-		transfer_reply.tx_buf = (unsigned long) send_reply;
-		transfer_reply.rx_buf = (unsigned long) recv_reply;
-		transfer_reply.len = REPLY_LEN_CMD_HELLO;
+		&transfer_reply.tx_buf = (unsigned long) send_reply;
+		&transfer_reply.rx_buf = (unsigned long) recv_reply;
+		&transfer_reply.len = REPLY_LEN_CMD_HELLO;
 		if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer_reply) < 0){
 			perror("Failed to send SPI message");
 			return -1;
 		}		
 		for(i = 0; i < REPLY_LEN_CMD_HELLO; i++)
-			printf("%02X ", send[i]);
+			printf("%02X ", send_reply[i]);
 		printf("\n");
 		for(i = 0; i < REPLY_LEN_CMD_HELLO; i++)
-			printf("%02X ", recv[i]);
-		printf("count: %llu\n", count);
-		memset(info, 0, sizeof(info));
-		memcpy(info, recv, sizeof(recv));
-		printf("  %s\r\n", recv);
+			printf("%02X ", recv_reply[i]);
+		printf("recv count: %llu\n", count);
+		printf("  %s\r\n", recv_reply);
 		free(send_reply);
 		free(recv_reply);
 		
