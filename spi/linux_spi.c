@@ -187,31 +187,42 @@ int main(int argc, char** argv)
 			memset(info, 0, sizeof(info));
 			memcpy(info, recv, sizeof(recv));
 			printf("  %s\r\n", recv);
-			// recv data HELLO
-			send_reply = (char *)malloc(REPLY_LEN_CMD_DATA * sizeof(char)); 
-			if(send_reply == NULL)
-				exit(1);
-			memset(send_reply, 0, REPLY_LEN_CMD_DATA);
-			recv_reply = (char *)malloc(REPLY_LEN_CMD_DATA * sizeof(char)); 
-			if(recv_reply == NULL)
-				exit(1);
-			memset(recv_reply, 0, REPLY_LEN_CMD_DATA);
-			transfer_reply.tx_buf = (unsigned long) send_reply;
-			transfer_reply.rx_buf = (unsigned long) recv_reply;
-			transfer_reply.len = REPLY_LEN_CMD_DATA;
-			if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer_reply) < 0){
-				perror("Failed to send SPI message");
-				return -1;
-			}		
-			for(i = 0; i < REPLY_LEN_CMD_DATA; i++)
-				printf("%02X ", send_reply[i]);
-			printf("\n");
-			for(i = 0; i < REPLY_LEN_CMD_DATA; i++)
-				printf("%02X ", recv_reply[i]);
-			printf("recv count: %llu\n", count);
-			//printf("  %s\r\n", recv_reply);
-			free(send_reply);
-			free(recv_reply);
+			
+			int remain = REPLY_LEN_CMD_DATA;
+			while(remain > 0)
+			{
+				int tmp = remain;
+				if(remain > REPLY_LEN_MAX)
+					remain = REPLY_LEN_MAX;
+			
+				// recv data DATA
+				send_reply = (char *)malloc(remain * sizeof(char)); 
+				if(send_reply == NULL)
+					exit(1);
+				memset(send_reply, 0, remain);
+				recv_reply = (char *)malloc(remain * sizeof(char)); 
+				if(recv_reply == NULL)
+					exit(1);
+				memset(recv_reply, 0, remain);
+				transfer_reply.tx_buf = (unsigned long) send_reply;
+				transfer_reply.rx_buf = (unsigned long) recv_reply;
+				transfer_reply.len = remain;
+				if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer_reply) < 0){
+					perror("Failed to send SPI message");
+					return -1;
+				}		
+				for(i = 0; i < remain; i++)
+					printf("%02X ", send_reply[i]);
+				printf("\n");
+				for(i = 0; i < remain; i++)
+					printf("%02X ", recv_reply[i]);
+				printf("recv count: %llu\n", count);
+				//printf("  %s\r\n", recv_reply);
+				free(send_reply);
+				free(recv_reply);
+				
+				remain = tmp - REPLY_LEN_MAX;
+			}
 			usleep(1000 * 1000);	
 		}
 		
