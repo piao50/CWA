@@ -67,22 +67,11 @@ int main(int argc, char** argv)
 	printf("SPI mode: %d\n", mode);
 	printf("Bits per word: %d\n", bits);
 	printf("Speed: %d Hz\n", speed);
-
-	unsigned char *send_reply;
-	unsigned char *recv_reply;
-	struct spi_ioc_transfer transfer_reply = {
-		.tx_buf = (unsigned long) send_reply,
-		.rx_buf = (unsigned long) recv_reply,
-		.len = 0,
-	};
 	while(1)
 	{
     	  count++;
 	  printf("\r\n\r\n");
 	        // send data HELLO
-		memset(send, 0, BUFFERSIZE);
-		memset(recv, 0, BUFFERSIZE);
-		sprintf(send, "%s", CMD_HELLO);
 		if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer) < 0){
 			perror("Failed to send SPI message");
 			return -1;
@@ -96,159 +85,31 @@ int main(int argc, char** argv)
 		memset(info, 0, sizeof(info));
 		memcpy(info, recv, sizeof(recv));
 		printf("  %s\r\n", recv);
-		// recv data HELLO
-		send_reply = (char *)malloc(REPLY_LEN_CMD_HELLO * sizeof(char)); 
-		if(send_reply == NULL)
-			exit(1);
-		memset(send_reply, 0, REPLY_LEN_CMD_HELLO);
-		recv_reply = (char *)malloc(REPLY_LEN_CMD_HELLO * sizeof(char)); 
-		if(recv_reply == NULL)
-			exit(1);
-		memset(recv_reply, 0, REPLY_LEN_CMD_HELLO);
-		transfer_reply.tx_buf = (unsigned long) send_reply;
-		transfer_reply.rx_buf = (unsigned long) recv_reply;
-		transfer_reply.len = REPLY_LEN_CMD_HELLO;
-		if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer_reply) < 0){
-			perror("Failed to send SPI message");
-			return -1;
-		}		
-		for(i = 0; i < REPLY_LEN_CMD_HELLO; i++)
-			printf("%02X ", send_reply[i]);
-		printf("\n");
-		for(i = 0; i < REPLY_LEN_CMD_HELLO; i++)
-			printf("%02X ", recv_reply[i]);
-		printf("recv count: %llu\n", count);
-		printf("  %s\r\n", recv_reply);
-		free(send_reply);
-		free(recv_reply);
-		usleep(1000 * 1000);
+		// recv data HELL
 		
-		// send data VALUE_xx1
-		memset(send, 0, BUFFERSIZE);
-		memset(recv, 0, BUFFERSIZE);
-		sprintf(send, "%s", CMD_VALUE_xx1);
-		if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer) < 0){
-			perror("Failed to send SPI message");
-			return -1;
-		}
-		for(i = 0; i < BUFFERSIZE; i++)
-			printf("%02X ", send[i]);
-		printf("\n");
-		for(i = 0; i < BUFFERSIZE; i++)
-			printf("%02X ", recv[i]);
-		printf("send count: %llu\n", count);
-		memset(info, 0, sizeof(info));
-		memcpy(info, recv, sizeof(recv));
-		printf("  %s\r\n", recv);
-		// recv data HELLO
-		send_reply = (char *)malloc(REPLY_LEN_CMD_VALUE_xx1 * sizeof(char)); 
-		if(send_reply == NULL)
-			exit(1);
-		memset(send_reply, 0, REPLY_LEN_CMD_VALUE_xx1);
-		recv_reply = (char *)malloc(REPLY_LEN_CMD_VALUE_xx1 * sizeof(char)); 
-		if(recv_reply == NULL)
-			exit(1);
-		memset(recv_reply, 0, REPLY_LEN_CMD_VALUE_xx1);
-		transfer_reply.tx_buf = (unsigned long) send_reply;
-		transfer_reply.rx_buf = (unsigned long) recv_reply;
-		transfer_reply.len = REPLY_LEN_CMD_VALUE_xx1;
-		if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer_reply) < 0){
-			perror("Failed to send SPI message");
-			return -1;
-		}		
-		for(i = 0; i < REPLY_LEN_CMD_VALUE_xx1; i++)
-			printf("%02X ", send_reply[i]);
-		printf("\n");
-		for(i = 0; i < REPLY_LEN_CMD_VALUE_xx1; i++)
-			printf("%02X ", recv_reply[i]);
-		printf("recv count: %llu\n", count);
-		printf("  %s\r\n", recv_reply);
-		free(send_reply);
-		free(recv_reply);
-		usleep(1000 * 1000);		
-		
-		int num = 5;
-		while(num-- > 0)
+		if(++count % 100 == 0)
 		{
-			// send data DATA
-			memset(send, 0, BUFFERSIZE);
-			memset(recv, 0, BUFFERSIZE);
-			sprintf(send, "%s", CMD_DATA);
-			if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer) < 0){
-				perror("Failed to send SPI message");
-				return -1;
-			}
 			for(i = 0; i < BUFFERSIZE; i++)
 				printf("%02X ", send[i]);
 			printf("\n");
 			for(i = 0; i < BUFFERSIZE; i++)
-				printf("%02X ", recv[i]);
-			printf("send count: %llu\n", count);
+			  printf("%02X ", recv[i]);
+			printf("count: %llu\n", count);
 			memset(info, 0, sizeof(info));
 			memcpy(info, recv, sizeof(recv));
 			printf("  %s\r\n", recv);
-			
-			int remain = REPLY_LEN_CMD_DATA;
-			while(remain > 0)
-			{
-				int tmp = remain;
-				if(remain > REPLY_LEN_MAX)
-					remain = REPLY_LEN_MAX;
-			
-				// recv data DATA
-				send_reply = (char *)malloc(remain * sizeof(char)); 
-				if(send_reply == NULL)
-					exit(1);
-				memset(send_reply, 0, remain);
-				recv_reply = (char *)malloc(remain * sizeof(char)); 
-				if(recv_reply == NULL)
-					exit(1);
-				memset(recv_reply, 0, remain);
-				transfer_reply.tx_buf = (unsigned long) send_reply;
-				transfer_reply.rx_buf = (unsigned long) recv_reply;
-				transfer_reply.len = remain;
-				if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer_reply) < 0){
-					perror("Failed to send SPI message");
-					return -1;
-				}		
-				for(i = 0; i < remain; i++)
-					printf("%02X ", send_reply[i]);
-				printf("\n");
-				for(i = 0; i < remain; i++)
-					printf("%02X ", recv_reply[i]);
-				printf("recv count: %llu\n", count);
-				//printf("  %s\r\n", recv_reply);
-				free(send_reply);
-				free(recv_reply);
-				
-				remain = tmp - REPLY_LEN_MAX;
-			}
-			usleep(1000 * 1000);	
-		}
-		
-		//if(++count % 100 == 0)
-// 		{
-// 			for(i = 0; i < BUFFERSIZE; i++)
-// 				printf("%02X ", send[i]);
-// 			printf("\n");
-// 			for(i = 0; i < BUFFERSIZE; i++)
-// 			  printf("%02X ", recv[i]);
-// 			printf("count: %llu\n", count);
-// 			memset(info, 0, sizeof(info));
-// 			memcpy(info, recv, sizeof(recv));
-// 			printf("  %s\r\n", recv);
 
-// 			if(strcmp(send, "hello") == 0)
-// 			{
-// 			  memset(send , 0, BUFFERSIZE);
-// 			  sprintf(send, "VALUE_xx1");
-// 			}
-// 			else
-// 			{
-// 			  memset(send, 0, BUFFERSIZE);
-// 			  sprintf(send, "hello");
-// 			}
-// 		}
+			if(strcmp(send, "hello") == 0)
+			{
+			  memset(send , 0, BUFFERSIZE);
+			  sprintf(send, "VALUE_xx1");
+			}
+			else
+			{
+			  memset(send, 0, BUFFERSIZE);
+			  sprintf(send, "hello");
+			}
+		}
 		usleep(1000 * 1000);
 	}
 
