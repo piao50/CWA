@@ -25,13 +25,13 @@ int main(int argc, char** argv)
 		.rx_buf = (unsigned long) recv,
 		.len = BUFFERSIZE,
 	};
-	unsigned char *send_reply;
-	unsigned char *recv_reply;
-	struct spi_ioc_transfer transfer_reply = {
-		.tx_buf = (unsigned long) send_reply,
-		.rx_buf = (unsigned long) recv_reply,
-		.len = 0,
-	};
+// 	unsigned char *send_reply;
+// 	unsigned char *recv_reply;
+// 	struct spi_ioc_transfer transfer_reply = {
+// 		.tx_buf = (unsigned long) send_reply,
+// 		.rx_buf = (unsigned long) recv_reply,
+// 		.len = 0,
+// 	};
 	uint64_t count = 0;
 	int i = 0;
 
@@ -89,15 +89,22 @@ int main(int argc, char** argv)
 		memcpy(info, recv, sizeof(recv));
 		printf("  %s\r\n", recv);
 		// recv data HELLO
+		unsigned char *send_reply;
+		unsigned char *recv_reply;
+		struct spi_ioc_transfer transfer_reply = {
+			.tx_buf = (unsigned long) send_reply,
+			.rx_buf = (unsigned long) recv_reply,
+			.len = 0,
+		};
 		send_reply = (char *)malloc(REPLY_LEN_CMD_HELLO * sizeof(char)); 
 		if(send_reply == NULL)
 			exit(1);
 		recv_reply = (char *)malloc(REPLY_LEN_CMD_HELLO * sizeof(char)); 
 		if(recv_reply == NULL)
 			exit(1);
-		&transfer_reply.tx_buf = (unsigned long) send_reply;
-		&transfer_reply.rx_buf = (unsigned long) recv_reply;
-		&transfer_reply.len = REPLY_LEN_CMD_HELLO;
+		transfer_reply.tx_buf = (unsigned long) send_reply;
+		transfer_reply.rx_buf = (unsigned long) recv_reply;
+		transfer_reply.len = REPLY_LEN_CMD_HELLO;
 		if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer_reply) < 0){
 			perror("Failed to send SPI message");
 			return -1;
