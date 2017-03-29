@@ -26,6 +26,13 @@
 // #define	SPI_MODE_2	(SPI_CPOL|0)
 // #define	SPI_MODE_3	(SPI_CPOL|SPI_CPHA)
 #endif
+
+#define CMD_HELLO "hello"
+#define RECV_LEN_CMD_HELLO 5
+#define CMD_VALUE_xx1 "VALUE_xx1"
+#define RECV_LEN_CMD_VALUE_xx1 16
+#define CMD_DATA "DATA"
+#define RECV_LEN_CMD_DATA 8005   
    
 #ifdef __cplusplus
 }

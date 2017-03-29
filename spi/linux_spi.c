@@ -61,18 +61,19 @@ int main(int argc, char** argv)
 	printf("Bits per word: %d\n", bits);
 	printf("Speed: %d Hz\n", speed);
 
-	//	for(i = 0; i < BUFFERSIZE; i++)
-	//	send[i] = '0' + (i % 10);
-
 	while(1)
 	{
-
+	        // send data HELLO
 		if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer) < 0){
 			perror("Failed to send SPI message");
 			return -1;
 		}
+		// recv data HELLO
+
+		// send VALUE_xx1
 		
-		if(++count % 100 == 0)
+		
+		//if(++count % 100 == 0)
 		{
 			for(i = 0; i < BUFFERSIZE; i++)
 				printf("%02X ", send[i]);
