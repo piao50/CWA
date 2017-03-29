@@ -28,7 +28,7 @@
 #endif
 
 #define CMD_HELLO "hello"
-#define REPLY_LEN_CMD_HELLO 20
+#define REPLY_LEN_CMD_HELLO 5
 #define CMD_VALUE_xx1 "VALUE_xx1"
 #define REPLY_LEN_CMD_VALUE_xx1 16
 #define CMD_DATA "DATA"
