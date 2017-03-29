@@ -32,7 +32,8 @@
 #define CMD_VALUE_xx1 "VALUE_xx1"
 #define REPLY_LEN_CMD_VALUE_xx1 16
 #define CMD_DATA "DATA"
-#define REPLY_LEN_CMD_DATA 8005   
+#define REPLY_LEN_CMD_DATA 8005
+#define REPLY_LEN_MAX 1000
    
 #ifdef __cplusplus
 }
