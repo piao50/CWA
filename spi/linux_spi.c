@@ -69,21 +69,10 @@ int main(int argc, char** argv)
 	printf("Speed: %d Hz\n", speed);
 	while(1)
 	{
-	        // send data HELLO
 		if (ioctl(file, SPI_IOC_MESSAGE(1), &transfer) < 0){
 			perror("Failed to send SPI message");
 			return -1;
 		}
-		for(i = 0; i < BUFFERSIZE; i++)
-			printf("%02X ", send[i]);
-		printf("\n");
-		for(i = 0; i < BUFFERSIZE; i++)
-			printf("%02X ", recv[i]);
-		printf("send count: %llu\n", count);
-		memset(info, 0, sizeof(info));
-		memcpy(info, recv, sizeof(recv));
-		printf("  %s\r\n", recv);
-		// recv data HELL
 		
 		if(++count % 100 == 0)
 		{
