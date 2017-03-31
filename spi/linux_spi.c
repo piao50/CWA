@@ -1,4 +1,13 @@
 //  gcc linux_spi.c -o spi
+// Usage:
+// ./spi -c "command" -i "interval"; default 1 second
+// ./spi -h ; show Help information
+// ./spi ; command cycle test
+// ./spi -s "speed" ; transfer speed
+// Summary: Mode Normal
+// args: -c "hello" -i 1000*1000(ns)
+// time: from xxxx-xx-xx xx:xx:xx to xxxx-xx-xx xx:xx:xx
+// Total xxx packages, xxx success, xxx failed.
 #include <stdio.h>
 #include <fcntl.h>
 #include <string.h>
