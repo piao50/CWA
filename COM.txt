@@ -42,10 +42,5 @@ STRUCT_xxx {
 };
 
 DATA_xxx {
-	LENGTH,
 	DATA[..]
 };
-
-Sample Code - STM32:
-
-add direct by gushi2017
