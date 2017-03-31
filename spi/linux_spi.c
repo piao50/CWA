@@ -34,13 +34,6 @@ int main(int argc, char** argv)
 		.rx_buf = (unsigned long) recv,
 		.len = BUFFERSIZE,
 	};
-// 	unsigned char *send_reply;
-// 	unsigned char *recv_reply;
-// 	struct spi_ioc_transfer transfer_reply = {
-// 		.tx_buf = (unsigned long) send_reply,
-// 		.rx_buf = (unsigned long) recv_reply,
-// 		.len = 0,
-// 	};
 	uint64_t count = 0;
 	int i = 0;
 
