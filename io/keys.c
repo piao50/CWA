@@ -1,3 +1,4 @@
+// gcc keys.c -o keys
 #include "keys.h"
 #include <stdio.h>
 
