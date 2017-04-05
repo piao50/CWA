@@ -150,10 +150,3 @@ UI - VIEW - ANALYSIS History:
 流程图：(诊断模式 - Diagnostics Mode)
   开机 -> 诊断
     |-----|
-
-
-
-
-
-
-
