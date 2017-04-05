@@ -143,7 +143,7 @@ UI - VIEW - ANALYSIS History:
   手动： 就绪 -> 功能 -> 清洁(指定时间)
          |----------------|
          
-流程图：(检测模式 - Monitoring Mode)
+流程图：(监测模式 - Monitoring Mode)
   开机 -> 自检 ->  分析 -> 报警
                    |------|
  
