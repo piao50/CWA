@@ -13,9 +13,9 @@ Hardware List for this experiment environment
 
 Cross Connection Diagram:
 
-||RPI#1|RPI#2|STM32|IMX6-NXP|IMX6-S2|335x|
+||RPI#1|RPI#2|STM32-YH|STM32-IMS|IMX6-NXP|IMX6-S2|335x|
 |-|-|-|-|-|-|-|
-|rs485|√|√|√|√|√|√|
-|can|||√|√|√|√|
-|spi|√|√|√||||
-|lcd-rgb888||||√|||
+|rs485|√|√|√|√|√|√|√|
+|can|||√||√|√|√|
+|spi|√|√|√|√||||
+|lcd-rgb888|||||√|||
