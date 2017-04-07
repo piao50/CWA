@@ -15,8 +15,9 @@ Communication Protocol
 || FAIL||
 
 # Sensors Table
+
 |ID|RANGE|FREQUENCE|E-CODE|spi|rs485|can|i2c|inet|ble|Comments|
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+|-|-|-|-|-|-|-|-|-|-|-|
 |VALUE_Pressure|30-1000|10 ms|-1|√||||||IMS Pressure|
 
 | VALUE_Pressure    | 30-1000  |    10 ms  |  -1    |  √  |       |     |     |      |     | IMS Pressure            |
