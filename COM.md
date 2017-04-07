@@ -6,7 +6,7 @@ Communication Protocol
 # Commands
 ||STM32|IMX.6|
 |-|-|-|
-|**Handshake Commands**|Hello|Hello|
+|Handshake Commands|Hello|Hello|
 |Sensor Data Commands|VALUE_xxx:----|VALUE_xxx|
 ||STRUCT_xxx:----,----|STRUCT_xxx|
 |Acquire Data Commands| DATA_xxx:----,----|DATA_xxx|
@@ -14,27 +14,8 @@ Communication Protocol
 |Operation Commands|SUCCESS|CMD_XXX|
 || FAIL||
 
-+----------------------------------------------------------------------+
-|                         |     STM32              |    IMX.6          |
-+----------------------------------------------------------------------+
-| Handshake Commands      | Hello                  | Hello             |
-+----------------------------------------------------------------------+
-| Sensor Data Commands    | VALUE_xxx:----         | VALUE_xxx         |
-|                         | STRUCT_xxx:----,----   | STRUCT_xxx        |
-+----------------------------------------------------------------------+
-| Acquire Data Commands   | DATA_xxx:----,----     | DATA_xxx          |
-+----------------------------------------------------------------------+
-| Device Status Commands  | STATUS:----,----       | STATUS            |
-+----------------------------------------------------------------------+
-| Operation Commands      | SUCCESS                | CMD_XXX           |
-|                         | FAIL                   |                   |
-+----------------------------------------------------------------------+
-
-Sensors Table :
-
-
----
-|   ID              |  RANGE   | FREQUENCE | E-CODE | spi | rs485 | can | i2c | inet | ble |       Comments          |
+# Sensors Table
+|ID|RANGE|FREQUENCE|E-CODE|spi|rs485|can|i2c|inet|ble|Comments|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 | VALUE_Pressure    | 30-1000  |    10 ms  |  -1    |  √  |       |     |     |      |     | IMS Pressure            |
 | VALUE_Temperature | 10-1000  |    any    |  -1    |  √  |       |     |     |      |     | Environment Temperature |
