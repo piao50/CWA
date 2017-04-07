@@ -33,7 +33,7 @@ Sensors Table :
 
 Detector Diagnostics :
 * Reset to factory settings.
-* Perform some sensor tests and show test results.
+* Perform some sensor test tasks and show test results.
 
 Definition:
   VALUE_xxx: float value. 
