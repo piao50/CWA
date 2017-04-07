@@ -1,8 +1,7 @@
-CWA
-Chemical Warfare Agents
+CWA - Chemical Warfare Agents
 ===
 
-== Chemical Agents (CA) ==
+# Chemical Agents (CA)
 Chemical Agents:
   Chemical agents are chemical substances that are intended for use in warfare or terrorist activities to kill, seriously injure, or seriously incapacitate people through their physiological effects.
   The most common CAs are the nerve agents, GA (tabun), GB (sarin), GD (soman), GF (cyclosarin), and VX; and the blister agents, H and HD (sulfur mustard), HN (nitrogen mustard), and the arsenical vesicant L (lewisite).
@@ -18,11 +17,12 @@ Route of Entry:
 Symptoms:
   -> Blister Agents (Vesicants)
     -> Physical and Chemical Properties
+---    
 
-== Toxic Industrial Chemicals/Toxic Industrial Materials (TIC) ==
+# Toxic Industrial Chemicals/Toxic Industrial Materials (TIC)
 TIC Rankings: (High Hazard, Medium Hazard, Low Hazard, Blood Agents, Choking Agents)
 
-== CHEMICAL DETECTION TECHNOLOGIES ==
+# CHEMICAL DETECTION TECHNOLOGIES
 Point Detection Technologies:
 • Ionization/Ion Mobility Spectrometry. A detector using ionization/ion mobility spectrometry (IMS) technology is typically a stand-alone
 detector that samples the environment using an air pump.Contaminants in the sampled air areionized by a radioactive source, and the resultant ions traverse the drift tube through an electric field toward an ion detector. The flight time, or the time it takes the ions to traverse the distance, is proportional to the size and shape of the ionized chemical species and is used for identification of the species. Analysis time ranges from several seconds to a few minutes.
@@ -44,7 +44,7 @@ Analytical Instruments:
 • Capillary Zone Electrophoresis.
 • Ultraviolet Spectrometry.
 
-== SELECTION FACTORS ==
+# SELECTION FACTORS
 • Unit Cost
 • Chemical Agents Detected
 • Toxic Industrial Chemicals/Toxic Industrial Materials Detected
@@ -62,7 +62,7 @@ Analytical Instruments:
 • Operator Skill Level
 • Training Requirements
 
-== Equipment Usage Categories ==
+# Equipment Usage Categories
 • Handheld-portable detection equipment.
 • Handheld-stationary detection equipment.
 • Vehicle-mounted detection equipment.
