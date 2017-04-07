@@ -15,6 +15,7 @@ Cross Connection Diagram:
 
 ||RPI#1|RPI#2|STM32|IMX6-NXP|IMX6-S2|335x|
 |-|-|-|-|-|-|-|
-|rs485|||||||
-|can|||||||
-|spi|||||||
+|rs485|√|√|√|√|√|√|
+|can|||√|√|√|√|
+|spi|√|√|√||||
+|lcd-rgb888||||√|||
