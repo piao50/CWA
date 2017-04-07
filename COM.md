@@ -1,4 +1,5 @@
-== Communication Protocol ==
+Communication Protocol
+===
 v0.2 - 4/7/17 by gushi, add detector diagnostics workflow.
 v0.1 - 3/21/17 by gushi
 
@@ -19,6 +20,8 @@ v0.1 - 3/21/17 by gushi
 +----------------------------------------------------------------------+
 
 Sensors Table :
+
+
 ---
 |   ID              |  RANGE   | FREQUENCE | E-CODE | spi | rs485 | can | i2c | inet | ble |       Comments          |
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
