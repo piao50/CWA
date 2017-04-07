@@ -17,17 +17,14 @@ Communication Protocol
 # Sensors Table
 
 |ID|RANGE|FREQUENCE|E-CODE|spi|rs485|can|i2c|inet|ble|Comments|
-|-|-|-|-|-|-|-|-|-|-|-|
+|-|-|-|-|-|-|-|-|-|-|-:|
 |VALUE_Pressure|30-1000|10 ms|-1|√||||||IMS Pressure|
-
-| VALUE_Pressure    | 30-1000  |    10 ms  |  -1    |  √  |       |     |     |      |     | IMS Pressure            |
-| VALUE_Temperature | 10-1000  |    any    |  -1    |  √  |       |     |     |      |     | Environment Temperature |
-| VALUE_Pump        | 30-1000  |    1 sec  |  -1    |  √  |       |     |     |      |     |                         |
-| VALUE_Battery     | 30-1000  |    1 sec  |  -1    |  √  |       |     |     |      |     |                         |
-| VALUE_Voltage     | 30-1000  |    1 sec  |  -1    |  √  |   √   |     |     |      |     |                         |
-| VALUE_Current     | 30-1000  |    5 sec  |  -1    |  √  |       |  √  |     |      |     |                         |
-| VALUE_Size        | 30-1000  |    1 min  |  -1    |  √  |   √   |  √  |  √  |  √   |  √  |                         |
-+--------------------------------------------------------------------------------------------------------------------+
+|VALUE_Temperature|30-1000|any|-1|√||||||Environment Temperature|
+|VALUE_Pump|30-1000|10 ms|-1|√|||||||
+|VALUE_Battery|0.0-1.0|10 ms|-1|√|√|√|√|√|√||
+|VALUE_Voltage|0-5|10 ms|-1|√|||||||
+|VALUE_Current|0.0-1mA|10 ms|-1|√|||||||
+|VALUE_xxx|x-x|xx ms|-1|√|||||||
 
 Detector Diagnostics :
 * Reset to factory settings.
