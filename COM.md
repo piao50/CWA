@@ -26,20 +26,20 @@ Communication Protocol
 |VALUE_Current|0.0-1mA|10 ms|-1|√|||||||
 |VALUE_xxx|x-x|xx ms|-1|√|||||||
 
-Detector Diagnostics :
-* Reset to factory settings.
-* Perform some sensor test tasks and show test results.
+	Detector Diagnostics :
+	* Reset to factory settings.
+	* Perform some sensor test tasks and show test results.
 
-Definition:
-  VALUE_xxx: float value. 
-  STRUCT_xxx:
+	Definition:
+	  VALUE_xxx: float value. 
+	  STRUCT_xxx:
 
-STRUCT_xxx {
-	VALUE_xxx1,
-	VALUE_xxx2,
-	VALUE_xxx3
-};
+	STRUCT_xxx {
+		VALUE_xxx1,
+		VALUE_xxx2,
+		VALUE_xxx3
+	};
 
-DATA_xxx {
-	DATA[..]
-};
+	DATA_xxx {
+		DATA[..]
+	};
