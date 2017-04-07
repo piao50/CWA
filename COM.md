@@ -9,19 +9,10 @@ Communication Protocol
 |Handshake Commands|Hello|Hello|
 |Sensor Data Commands|VALUE_xxx:----|VALUE_xxx|
 ||STRUCT_xxx:----,----|STRUCT_xxx|
-
-| Handshake Commands      | Hello                  | Hello             |
-+----------------------------------------------------------------------+
-| Sensor Data Commands    | VALUE_xxx:----         | VALUE_xxx         |
-|                         | STRUCT_xxx:----,----   | STRUCT_xxx        |
-+----------------------------------------------------------------------+
-| Acquire Data Commands   | DATA_xxx:----,----     | DATA_xxx          |
-+----------------------------------------------------------------------+
-| Device Status Commands  | STATUS:----,----       | STATUS            |
-+----------------------------------------------------------------------+
-| Operation Commands      | SUCCESS                | CMD_XXX           |
-|                         | FAIL                   |                   |
-+----------------------------------------------------------------------+
+|Acquire Data Commands| DATA_xxx:----,----|DATA_xxx|
+|Device Status Commands| STATUS:----,----|STATUS|
+|Operation Commands|SUCCESS|CMD_XXX|
+|| FAIL||
 
 +----------------------------------------------------------------------+
 |                         |     STM32              |    IMX.6          |
