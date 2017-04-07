@@ -24,5 +24,11 @@ Hardware List for this experiment environment
 |ble|√|√|√||√|√|√|√|√|
 
 # rs485 bus Test Plan
+Only one master with serveral slave 
 
 # can bus Test Plan
+
+# network Test Plan
+  all data can be map to *tcp/ip socket* network interface.
+  
+  this can use c/c++, python, or web technoligy.
