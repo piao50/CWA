@@ -31,6 +31,8 @@ Communication Protocol
 	* Perform some sensor test tasks and show test results.
 
 	Definition:
+```int main(int argc, char *argv[])```
+	
 ```
 VALUE_xxx: float value. 
 	  STRUCT_xxx:
