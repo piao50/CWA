@@ -12,6 +12,8 @@ Hardware List for this experiment environment
 [IMX6-forlinx] x 1
 
 Cross Connection Diagram:
-+-------------------------+
-|
-|-------------------------+
+<table>
+    <tr>
+        <td>Foo</td>
+    </tr>
+</table>
