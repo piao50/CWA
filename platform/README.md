@@ -13,8 +13,8 @@ Hardware List for this experiment environment
 
 Cross Connection Diagram:
 
-|学号|姓名|分数|
-|-|-|-|
-|小明|男|75|
-|小红|女|79|
-|小陆|男|92|
+||RPI#1|RPI#2|STM32|IMX6-NXP|IMX6-S2|335x|
+|-|-|-|-|-|-|-|
+|rs485|||||||
+|can|||||||
+|spi|||||||
