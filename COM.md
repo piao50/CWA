@@ -6,7 +6,7 @@ Communication Protocol
 # Commands
 ||STM32|IMX.6|
 |-|-|-|
-|Handshake Commands|Hello|Hello|
+|**Handshake Commands**|Hello|Hello|
 |Sensor Data Commands|VALUE_xxx:----|VALUE_xxx|
 ||STRUCT_xxx:----,----|STRUCT_xxx|
 |Acquire Data Commands| DATA_xxx:----,----|DATA_xxx|
