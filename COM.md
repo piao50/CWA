@@ -31,15 +31,21 @@ Communication Protocol
 	* Perform some sensor test tasks and show test results.
 
 	Definition:
-`VALUE_xxx: float value. 
-	  STRUCT_xxx:`
+```
+VALUE_xxx: float value. 
+	  STRUCT_xxx:
+```	  
 	  
-`STRUCT_xxx {
+```
+STRUCT_xxx {
 		VALUE_xxx1,
 		VALUE_xxx2,
 		VALUE_xxx3
-	};`
-	
-`DATA_xxx {
+	};
+```
+
+```
+DATA_xxx {
 		DATA[..]
-	};`
+	};
+```	
