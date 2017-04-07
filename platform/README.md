@@ -13,9 +13,12 @@ Hardware List for this experiment environment
 
 Cross Connection Diagram:
 
-||RPI-1|RPI-2|ST-YH|**ST-IMS**|i.MX6-NXP|i.MX6-S2|335x|
-|-|-|-|-|-|-|-|-|
-|rs485|√(Master)|√(Master)|√(Slave)|√(Slave)|√(Master)|√(Master)|√(Master)|
-|can|||√||√|√|√|
-|spi|√|√|√|√||||
-|lcd-rgb888|||||√|||
+||RPI-1|RPI-2|ST-YH|**ST-IMS**|i.MX6-NXP|i.MX6-S2|335x|PC|
+|-|-|-|-|-|-|-|-|-|
+|rs485|√(Master)|√(Master)|√(Slave)|√(Slave)|√(Master)|√(Master)|√(Master)||
+|can|||√||√|√|√||
+|spi|√|√|√|√|||||
+|lcd-rgb888|||||√||||
+|inet|√|√|√||√|√|√|√|√|
+|wifi|√|√|√||√|√|√|√|√|
+|ble|√|√|√||√|√|√|√|√|
