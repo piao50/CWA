@@ -1,4 +1,4 @@
-# CWA
+CWA
 Chemical Warfare Agents
 ===
 
