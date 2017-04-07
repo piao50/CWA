@@ -11,8 +11,8 @@ Hardware List for this experiment environment
 [IMX6-NXP]
 [IMX6-forlinx] x 1
 
-Cross Connection Diagram:
 
+# Cross Connection Diagram:
 ||RPI-1|RPI-2|ST-YH|**ST-IMS**|i.MX6-NXP|i.MX6-S2|335x|PC|
 |-|-|-|-|-|-|-|-|-|
 |rs485|√(Master)|√(Master)|√(Slave)|√(Slave)|√(Master)|√(Master)|√(Master)||
@@ -22,3 +22,7 @@ Cross Connection Diagram:
 |inet|√|√|√||√|√|√|√|√|
 |wifi|√|√|√||√|√|√|√|√|
 |ble|√|√|√||√|√|√|√|√|
+
+# rs485 bus Test Plan
+
+# can bus Test Plan
