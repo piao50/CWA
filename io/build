@@ -1,2 +1,4 @@
 #!/bin/bash
 g++ simple.cpp GPIO.cpp -o simple -pthread
+
+g++ keys.cpp GPIO.cpp -o keys -pthread
