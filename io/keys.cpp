@@ -28,7 +28,7 @@ int main(){
    // for(int i = 0; i < 3; i++)
    // 	in[i].setDirection(INPUT);
 
-   for (int i=0; i<100; i++){        // flash the LED 10 times	
+   for (int i=0; i<1000; i++){        // flash the LED 10 times	
       s1 = in1.getValue();
       s2 = in2.getValue();
       s3 = in3.getValue();
@@ -57,13 +57,13 @@ int main(){
       // out3.setValue(HIGH);       // turn the LED on
       // out4.setValue(HIGH);       // turn the LED on
       // out5.setValue(HIGH);       // turn the LED on
-      usleep(500000);               // sleep for 0.5 seconds
+      usleep(50000);               // sleep for 0.5 seconds
       out1.setValue(LOW);       // turn the LED on
       out2.setValue(LOW);       // turn the LED on
       out3.setValue(LOW);       // turn the LED on
       out4.setValue(LOW);       // turn the LED on
       out5.setValue(LOW);       // turn the LED on
-      usleep(500000);               // sleep for 0.5 seconds
+      usleep(50000);               // sleep for 0.5 seconds
 
 
 
