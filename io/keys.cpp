@@ -21,17 +21,39 @@ int main(){
    in2.setDirection(INPUT);
    in3.setDirection(INPUT);
 
+   int s1, s2, s3;
+
    // for(int i = 0; i < 5; i++)
    // 	out[i].setDirection(OUTPUT);
    // for(int i = 0; i < 3; i++)
    // 	in[i].setDirection(INPUT);
 
-   for (int i=0; i<100; i++){        // flash the LED 10 times		
-      out1.setValue(HIGH);       // turn the LED on
-      out2.setValue(HIGH);       // turn the LED on
-      out3.setValue(HIGH);       // turn the LED on
-      out4.setValue(HIGH);       // turn the LED on
-      out5.setValue(HIGH);       // turn the LED on
+   for (int i=0; i<100; i++){        // flash the LED 10 times	
+      s1 = in1.getValue();
+      s2 = in2.getValue();
+      s3 = in3.getValue();
+      cout << "KEYS: " << s1 << ", " << s2 << ", " << s3 << endl;
+
+      if(s1 == 1)
+      {
+         out1.setValue(HIGH);       // turn the LED on
+         out2.setValue(HIGH);       // turn the LED on
+      }
+      if(s2 == 1)
+      {
+         out3.setValue(HIGH);       // turn the LED on
+         out4.setValue(HIGH);       // turn the LED on
+      }
+      if(s3 == 1)
+      {
+         out5.setValue(HIGH);       // turn the LED on
+      }
+
+      // out1.setValue(HIGH);       // turn the LED on
+      // out2.setValue(HIGH);       // turn the LED on
+      // out3.setValue(HIGH);       // turn the LED on
+      // out4.setValue(HIGH);       // turn the LED on
+      // out5.setValue(HIGH);       // turn the LED on
       usleep(500000);               // sleep for 0.5 seconds
       out1.setValue(LOW);       // turn the LED on
       out2.setValue(LOW);       // turn the LED on
@@ -40,10 +62,8 @@ int main(){
       out5.setValue(LOW);       // turn the LED on
       usleep(500000);               // sleep for 0.5 seconds
 
-      cout << "BTN1: " << in1.getValue() 
-            << ", BTN2: " << in2.getValue()
-            << ", BTN3: " << in3.getValue()
-            << endl;
+
+
    }
 
 
