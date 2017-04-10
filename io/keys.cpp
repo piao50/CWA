@@ -39,6 +39,11 @@ int main(){
       out4.setValue(LOW);       // turn the LED on
       out5.setValue(LOW);       // turn the LED on
       usleep(500000);               // sleep for 0.5 seconds
+
+      cout << "BTN1: " << in1.getValue() 
+            << ", BTN2: " << in2.getValue()
+            << ", BTN3: " << in3.getValue()
+            << endl;
    }
 
 
