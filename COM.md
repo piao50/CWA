@@ -13,6 +13,7 @@ Communication Protocol
 |Device Status Commands| STATUS:----,----|STATUS|
 |Operation Commands|SUCCESS|CMD_XXX|
 || FAIL||
+|| OK||
 
 # Sensors Table
 
