@@ -32,13 +32,13 @@ int main(){
       out3.setValue(HIGH);       // turn the LED on
       out4.setValue(HIGH);       // turn the LED on
       out5.setValue(HIGH);       // turn the LED on
-      usleep(50000);               // sleep for 0.5 seconds
+      usleep(500000);               // sleep for 0.5 seconds
       out1.setValue(LOW);       // turn the LED on
       out2.setValue(LOW);       // turn the LED on
       out3.setValue(LOW);       // turn the LED on
       out4.setValue(LOW);       // turn the LED on
       out5.setValue(LOW);       // turn the LED on
-      usleep(50000);               // sleep for 0.5 seconds
+      usleep(500000);               // sleep for 0.5 seconds
    }
 
 
