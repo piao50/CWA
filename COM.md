@@ -22,7 +22,7 @@ Communication Protocol
 |VALUE_Temperature|30-1000|any|-1|√||||||Environment Temperature|
 |VALUE_Pump|30-1000|10 ms|-1|√|||||||
 |VALUE_Battery|0.0-1.0|10 ms|-1|√|√|√|√|√|√||
-|VALUE_Voltage|0-5|10 ms|-1|√|||||||
+|VALUE_Voltage|0-5|10 ms|-1|√||||||new message|
 |VALUE_Current|0.0-1mA|10 ms|-1|√|||||||
 |VALUE_xxx|x-x|xx ms|-1|√|||||||
 
