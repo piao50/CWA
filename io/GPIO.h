@@ -43,6 +43,7 @@ private:
 	int number, debounceTime;
 	string name, path;
 public:
+	GPIO();
 	GPIO(int number);                     // constructor exports pin
 	virtual int getNumber() { return number; }
 

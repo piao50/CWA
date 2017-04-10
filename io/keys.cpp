@@ -8,22 +8,36 @@
 using namespace exploringRPi;
 using namespace std;
 
-
 int main(){
-   GPIO out[5] = {GPIO(LED1), GPIO(LED2), GPIO(LED3), GPIO(LED4), GPIO(LED5)};
-   GPIO in[3] = {GPIO(BTN1), GPIO(BTN2),GPIO(BTN3)};
+   GPIO out1(LED1),out2(LED2),out3(LED3),out4(LED4),out5(LED5);
+   GPIO in1(BTN1),in2(BTN2),in3(BTN3);
 
-   for(int i = 0; i < 5; i++)
-   	out[i].setDirection(OUTPUT);
-   for(int i = 0; i < 3; i++)
-   	in[i].setDirection(INPUT);
+   out1.setDirection(OUTPUT);
+   out2.setDirection(OUTPUT);
+   out3.setDirection(OUTPUT);
+   out4.setDirection(OUTPUT);
+   out5.setDirection(OUTPUT);
+   in1.setDirection(INPUT);
+   in2.setDirection(INPUT);
+   in3.setDirection(INPUT);
 
-   for (int i=0; i<100; i++){        // flash the LED 10 times
-   		for(int j = 0; j < 5; j++)
-      		out[i].setValue(HIGH);       // turn the LED on
+   // for(int i = 0; i < 5; i++)
+   // 	out[i].setDirection(OUTPUT);
+   // for(int i = 0; i < 3; i++)
+   // 	in[i].setDirection(INPUT);
+
+   for (int i=0; i<100; i++){        // flash the LED 10 times		
+      out1.setValue(HIGH);       // turn the LED on
+      out2.setValue(HIGH);       // turn the LED on
+      out3.setValue(HIGH);       // turn the LED on
+      out4.setValue(HIGH);       // turn the LED on
+      out5.setValue(HIGH);       // turn the LED on
       usleep(50000);               // sleep for 0.5 seconds
-   		for(int j = 0; j < 5; j++)
-      		out[i].setValue(LOW);       // turn the LED on
+      out1.setValue(LOW);       // turn the LED on
+      out2.setValue(LOW);       // turn the LED on
+      out3.setValue(LOW);       // turn the LED on
+      out4.setValue(LOW);       // turn the LED on
+      out5.setValue(LOW);       // turn the LED on
       usleep(50000);               // sleep for 0.5 seconds
    }
 

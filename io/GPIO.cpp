@@ -36,6 +36,10 @@ using namespace std;
 
 namespace exploringRPi {
 
+GPIO::GPIO()
+{
+  
+}
 /**
  *
  * @param number The GPIO number for the RPi
