@@ -37,15 +37,18 @@ int main(){
       if(s1 == 1)
       {
          out1.setValue(HIGH);       // turn the LED on
-         out2.setValue(HIGH);       // turn the LED on
       }
       if(s2 == 1)
       {
-         out3.setValue(HIGH);       // turn the LED on
-         out4.setValue(HIGH);       // turn the LED on
+         out2.setValue(HIGH);       // turn the LED on
       }
       if(s3 == 1)
       {
+         out3.setValue(HIGH);       // turn the LED on
+      }
+      if(s1 == 0 && s2 == 0 && s3 == 0)
+      {
+         out4.setValue(HIGH);       // turn the LED on
          out5.setValue(HIGH);       // turn the LED on
       }
 
