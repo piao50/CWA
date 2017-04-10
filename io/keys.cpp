@@ -16,7 +16,7 @@ int main(){
    for(int i = 0; i < 5; i++)
    	out[i].setDirection(OUTPUT);
    for(int i = 0; i < 3; i++)
-   	inGPIO.setDirection(INPUT);
+   	in[i].setDirection(INPUT);
 
    for (int i=0; i<100; i++){        // flash the LED 10 times
    		for(int j = 0; j < 5; j++)
