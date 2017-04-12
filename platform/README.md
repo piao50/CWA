@@ -6,11 +6,12 @@ Raspberry pi 2: test enviroment for linux programes
 
 ---
 Hardware List for this experiment environment
-[STM32-(f429)] x 1
-[Raspberry pi 2] x 2
-[IMX6-NXP]
-[IMX6-forlinx] x 1
-
+* [ST-YH(f429)] x 1
+* [ST-IMS(f429)] x 1
+* [Raspberry pi 2] x 2
+* [IMX6-NXP] x 1
+* [IMX6-S2] x 1
+* [335x] x 1
 
 # Cross Connection Diagram:
 ||RPI-1|RPI-2|ST-YH|**ST-IMS**|i.MX6-NXP|i.MX6-S2|335x|PC|
@@ -32,3 +33,6 @@ Only one master with serveral slave
   all data can be map to *tcp/ip socket* network interface.
   
   this can use c/c++, python, or web technoligy.
+
+* [ST-YH(f429)] x 1
+
