@@ -19,12 +19,7 @@ Hardware List for this experiment environment
 ||SN-PI1|SN-PI2|SN-ST-YH|**SN-ST-IMS**|SN-NXP|SN-S2|SN-335x|SN-PC|
 |rs485|√|√|√|√|√|√|√||
 |can|||√||√|√|√||
-|spi|√|√|√|√|||||
-|lcd-rgb888|||||√||||
 |inet|√|√||||√|√|√|√|
-|wifi|√|√|√||√|√|√|√|√|
-|ble|√|√|√||√|√|√|√|√|
-
 
 # rs485 bus Test Plan
 Only one master with serveral slave 
