@@ -28,9 +28,15 @@ Only one master with serveral slave
 |-|-|-|-|-|-|-|-|-|
 ||SN-PI1|SN-PI2|SN-YH|**SN-IMS**|SN-NXP|SN-S2|SN-335x|SN-PC|
 |rs485|√(Master)|√|√|√|√|√|√||
-|inet|√(Proxy)|||||||||
+|inet|√(Proxy)||||||||√(Center)|
 
 # can bus Test Plan
+
+||RPI-1|RPI-2|ST-YH|**ST-IMS**|i.MX6-NXP|i.MX6-S2|335x|PC|
+|-|-|-|-|-|-|-|-|-|
+||SN-PI1|SN-PI2|SN-YH|**SN-IMS**|SN-NXP|SN-S2|SN-335x|SN-PC|
+|can|||√||√|√|√||
+|inet|||||||√(Proxy)||√(Center)|
 
 # network Test Plan
   all data can be map to *tcp/ip socket* network interface.
