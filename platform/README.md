@@ -46,8 +46,8 @@ Only one master with serveral slave
 ||RPI-1|RPI-2|ST-YH|**ST-IMS**|i.MX6-NXP|i.MX6-S2|335x|PC|
 |-|-|-|-|-|-|-|-|-|
 ||SN-PI1|SN-PI2|SN-YH|**SN-IMS**|SN-NXP|SN-S2|SN-335x|SN-PC|
-|inet-python|√|√|||||√(Proxy)|√(Center)|
-|inet-c/c++|√|√|||||√(Proxy)|√(Center)|
+|inet-python|√|√||||||√(Center)|
+|inet-c/c++|√|√||||√||√(Center)|
 
 * [ST-YH(f429)] x 1
 
