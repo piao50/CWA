@@ -15,8 +15,8 @@ Hardware List for this experiment environment
 
 # Cross Connection Diagram:
 ||RPI-1|RPI-2|ST-YH|**ST-IMS**|i.MX6-NXP|i.MX6-S2|335x|PC|
-||SN-PI1|SN-PI2|SN-ST-YH|**SN-ST-IMS**|SN-NXP|SN-S2|SN-335x|SN-PC|
 |-|-|-|-|-|-|-|-|-|
+||SN-PI1|SN-PI2|SN-ST-YH|**SN-ST-IMS**|SN-NXP|SN-S2|SN-335x|SN-PC|
 |rs485|√|√|√|√|√|√|√|√|
 |can|||√||√|√|√||
 |spi|√|√|√|√|||||
@@ -24,6 +24,7 @@ Hardware List for this experiment environment
 |inet|√|√|√||√|√|√|√|√|
 |wifi|√|√|√||√|√|√|√|√|
 |ble|√|√|√||√|√|√|√|√|
+
 
 # rs485 bus Test Plan
 Only one master with serveral slave 
