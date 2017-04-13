@@ -25,6 +25,9 @@ QT Programming Language
     
     File System Operations:
     
+* Qt's model/view framework.
+    
+    
 ## QT Paint
     Purpose: retain in Customize widget, draw basic graphic primitives. draw complex object systems.
     
