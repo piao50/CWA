@@ -126,7 +126,7 @@ UI - VIEW - ANALYSIS History:
 
 
 
-流程图：(检测模式 - Detecting Mode)
+流程图：(独立运行-手动模式 - Detecting Mode)
   F1: 开机流程
   开机 → 自检 → 就绪
   F2: 检测流程
@@ -143,10 +143,10 @@ UI - VIEW - ANALYSIS History:
   手动： 就绪 → 功能 → 清洁(指定时间)
          ↑----------------↓
          
-流程图：(监测模式 - Monitoring Mode)
+流程图：(独立运行-自动模式 - Monitoring Mode)
   开机 → 自检 →  分析 → 报警
                  ↑------↓
  
-流程图：(诊断模式 - Diagnostics Mode)
+流程图：(监控模式 - Diagnostics Mode)
   开机 → 诊断
    ↑-----↓
