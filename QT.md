@@ -24,6 +24,11 @@ QT Programming Language
     * classes for receiving input and printing output.
     
     Input/Output and Networking: handle input and output to and from **external devices, processes, files** etc. as well as manipulating *files and directories*.
+    QBuffer:
+        QFile: 
+        QFileInfo:  
+        QFileDevice:  
+        QFileSystemWatcher:
     
 * Qt's model/view framework.
     
