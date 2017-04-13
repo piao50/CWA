@@ -24,7 +24,8 @@ QT Programming Language
     * classes for receiving input and printing output.
     
 ## QT SQL
-    Contains:1
+    For Use: support for SQL databases
+    Contains: Driver layer, SQL API layer, SQL API layer
 
 ## QT Widgets
 
