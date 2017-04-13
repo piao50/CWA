@@ -11,6 +11,7 @@ QT Programming Language
     #include <QDebug>
     qDebug() << "some output informations ..." << endl;
 ```    
+* QObject's relationship, the signal - slot framework.
 * QT Threading
     
     Contains: platform-independent threading classes, a thread-safe way of posting events, and signal-slot connections across threads.
