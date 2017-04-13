@@ -31,7 +31,20 @@ QT Programming Language
 ## QT SQL
     For Use: support for SQL databases
     Contains: Driver layer, SQL API layer, SQL API layer
-    Case study: query with conditions(or filter), display query result page by page. 
+    Case study: query with conditions(or filter), display query result page by page.
+    
+|Driver Type|Description|
+|-|-|
+|QDB2|IBM DB2|
+|QIBASE|Borland InterBase Driver|
+|QMYSQL|MySQL Driver|
+|QOCI|Oracle Call Interface Driver|
+|QODBC|ODBC Driver (includes Microsoft SQL Server)|
+|QPSQL|PostgreSQL Driver|
+|QSQLITE|SQLite version 3 or above|
+|QSQLITE2|SQLite version 2|
+|QTDS|Sybase Adaptive Server|
+
 ```
 #include <QtSql>
 *.pro: QT += sql
