@@ -35,7 +35,12 @@ QT Programming Language
     
     
 ## QT Paint
-    Purpose: retain in Customize widget, draw basic graphic primitives. draw complex object systems.
+    Purpose: low-level painting on widgets and other paint devices.
+```
+Header: #include <QPainter> 
+qmake: QT += gui
+```
+    
     
 ## QT SQL
     For Use: support for SQL databases
