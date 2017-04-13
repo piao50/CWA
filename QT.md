@@ -25,6 +25,9 @@ QT Programming Language
     
     File System Operations:
     
+## QT Paint
+    Purpose: retain in Customize widget, draw basic graphic primitives. draw complex object systems.
+    
 ## QT SQL
     For Use: support for SQL databases
     Contains: Driver layer, SQL API layer, SQL API layer
