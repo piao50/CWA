@@ -26,6 +26,10 @@ QT Programming Language
 ## QT SQL
     For Use: support for SQL databases
     Contains: Driver layer, SQL API layer, SQL API layer
+```
+#include <QtSql>
+*.pro: QT += sql
+```
 
 ## QT Widgets
 
