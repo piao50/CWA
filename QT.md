@@ -40,7 +40,7 @@ QT Programming Language
 Header: #include <QPainter> 
 qmake: QT += gui
 ```
-    for use: It can draw **everything** from simple lines to complex shapes like pies and chords. It can also draw aligned text and pixmaps. It can also do view and world transformation.
+for use: It can draw **everything** from simple lines to complex shapes like pies and chords. It can also draw aligned text and pixmaps. It can also do view and world transformation.
     Common use: The common use of QPainter is inside a widget's paint event: **Construct and customize** (e.g. set the pen or the brush) the painter. Then **draw**. 
 ```
  void SimpleExampleWidget::paintEvent(QPaintEvent *)
