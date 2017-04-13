@@ -1,8 +1,8 @@
 QT Programming Language
 ===
 
-# QT Core
+## QT Core
 
-# QT Widgets
+## QT Widgets
 
-# Plugins - QT Charts
+## Plugins - QT Charts
