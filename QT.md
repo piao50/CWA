@@ -24,7 +24,6 @@ QT Programming Language
     * classes for receiving input and printing output.
     
 ## QT SQL
-
     Contains:1
 
 ## QT Widgets
