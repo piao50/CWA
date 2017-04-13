@@ -23,9 +23,12 @@ QT Programming Language
     * a set of containers
     * classes for receiving input and printing output.
     
+    File System Operations:
+    
 ## QT SQL
     For Use: support for SQL databases
     Contains: Driver layer, SQL API layer, SQL API layer
+    Case study: query with conditions(or filter), display query result page by page. 
 ```
 #include <QtSql>
 *.pro: QT += sql
