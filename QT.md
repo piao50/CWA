@@ -23,7 +23,7 @@ QT Programming Language
     * a set of containers
     * classes for receiving input and printing output.
     
-    File System Operations:
+    Input/Output and Networking: handle input and output to and from **external devices, processes, files** etc. as well as manipulating *files and directories*.
     
 * Qt's model/view framework.
     
