@@ -6,6 +6,12 @@ QT Programming Language
 ```
 #include <QtCore>
 ```
+* Debug information Output
+```
+    #include <QDebug>
+    qDebug() << "some output informations ..." << endl;
+```    
+* QT Threading
 
 ## QT Widgets
 
