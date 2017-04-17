@@ -151,5 +151,8 @@ The QWidget class is the **base class** of all *user interface objects*.
 The size policy lets you supply **good default behavior** for the **layout management system**, so that other widgets can contain and manage yours **easily**. The default size policy indicates that the size hint represents the preferred size of the widget, and this is often good enough for many widgets.
 
 ### Widget Style Sheets
+widgets can also be styled according to rules specified in a style sheet. This feature enables you to customize the appearance of specific widgets to provide visual cues to users about their purpose. 
 
+### Transparency and Double Buffering
+Since Qt 4.0, QWidget automatically double-buffers its painting, so there is no need to write double-buffering code in paintEvent() to avoid flicker.
 ## Plugins - QT Charts
