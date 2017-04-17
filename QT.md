@@ -86,7 +86,30 @@ for use: It can draw **everything** from simple lines to complex shapes like pie
       painter.drawText(rect(), Qt::AlignCenter, "Qt");
   }
 ```
+
+The Core functionality of QPainter is drawing. 
+    * QPainter is the class used to perform drawing operations.  
+    * QPaintDevice represents a device that can be painted on using a QPainter.
+    * QPaintEngine provides the interface that the painter uses to draw onto different types of devices.
+
+Architecture:  
+    Together with the QPaintDevice and QPaintEngine classes. (thought)
     
+Settings: 
+    the font used for drawing text,   
+    the color or pattern that is used for filling shapes  
+    the color or stipple that is used for drawing lines or boundaries.
+    make up the painter's coordinate transformation system. viewport(), window(), worldTransform().
+Drawing:
+    provides functions to draw most primitives: drawPoint(), drawPoints(), drawLine(), drawRect(), drawRoundedRect(), drawEllipse(), drawArc(), drawPie(), drawChord(), drawPolyline(), drawPolygon(), drawConvexPolygon() and drawCubicBezier().  
+    convenience functions:  drawRects() and drawLines(), draw the given number of rectangles or lines in the given array of QRects or QLines using the current pen and brush.  
+    fill area: fillRect(), eraseRect().  
+    Paths: provides a container for painting operations, enabling graphical shapes to be constructed and reused.  
+    Pixmaps and Images:  
+    Rendering Quality:  
+    Coordinate Transformations: The most commonly used transformations are scaling, rotation, translation and shearing.  
+    Clipping:  
+    Composition Modes:  
     
 ## QT SQL
     For Use: support for SQL databases
