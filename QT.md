@@ -25,10 +25,12 @@ QT Programming Language
     * classes for receiving input and printing output.
 
 ### QT Container classes
-    These container classes are designed to be lighter, safer, and easier to use than the STL containers. 
+    These container classes are designed to be lighter, safer, and easier to use than the STL containers.   
+    
     
 ### Input/Output and Networking
-    handle input and output to and from **external devices, processes, files** etc. as well as manipulating *files and directories*.
+    handle input and output to and from **external devices, processes, files** etc. as well as manipulating *files and directories*.  
+    
     
 * Qt's model/view framework.
     
