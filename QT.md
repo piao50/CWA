@@ -57,6 +57,15 @@ QT Programming Language
     * Images: QImageReader, QImageWriter
     * Text: QTextDocumentWriter
     
+    common file types: text and binary and resources.  
+    common file operations:
+        * remove a file using remove().
+        * The file is opened with open(), closed with close(), and flushed with flush().
+        * read and written using QDataStream or QTextStream
+        * read and written with QIODevice-inherited functions read(), readline(), readAll(), write().
+        * read and written one character at a time with getChar(), putChar(), and ungetChar().
+    More advanced **file system related operations** are provided by QFileInfo and QDir.
+    
 * Qt's model/view framework.
     
     
