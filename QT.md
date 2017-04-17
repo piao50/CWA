@@ -39,6 +39,14 @@ QT Programming Language
     * special cases, the QCache and QContiguousCache.
     Container Comparatives Summary:
     
+    Algorithm Complexity:  
+    * Constant time: O(1). 
+    * Logarithmic time: O(log n). 
+    * Linear time: O(n).
+    * Linear-logarithmic time: O(n log n). 
+    * Quadratic time: O(n²).
+    
+    Growth Strategies: 
     
 ### Input/Output and Networking
     handle input and output to and from **external devices, processes, files** etc. as well as manipulating *files and directories*.  
