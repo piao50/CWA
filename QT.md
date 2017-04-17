@@ -47,10 +47,15 @@ QT Programming Language
     * Quadratic time: O(n²).
     
     Growth Strategies: 
-    
+
 ### Input/Output and Networking
-    handle input and output to and from **external devices, processes, files** etc. as well as manipulating *files and directories*.  
-    
+    Handle input and output to and from **external devices, processes, files** etc. as well as manipulating *files and directories*.   
+    * Qt file system: QDir, QFile, QFileDevice, QFileInfo.
+    * IO Stream: QBuffer, QDataStream
+    * Abstract: QIODevice
+    * Resource files. QResource
+    * Images: QImageReader, QImageWriter
+    * Text: QTextDocumentWriter
     
 * Qt's model/view framework.
     
