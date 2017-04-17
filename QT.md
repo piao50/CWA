@@ -148,7 +148,7 @@ The QWidget class is the **base class** of all *user interface objects*.
 * Custom Widgets and Painting:  can be used to display custom content that is composed using a series of painting operations with an instance of the QPainter class. Each widget performs all painting operations from within its paintEvent() function.       
 
 ### Widget Size Hints and Size Policies
-
+The size policy lets you supply **good default behavior** for the **layout management system**, so that other widgets can contain and manage yours **easily**. The default size policy indicates that the size hint represents the preferred size of the widget, and this is often good enough for many widgets.
 
 ### Widget Style Sheets
 
