@@ -140,4 +140,16 @@ The QWidget class is the **base class** of all *user interface objects*.
 * Paints a representation of itself on the screen.
 * Every widget is **rectangular**, and they are sorted in a Z-order. 
 
+### Widgets Categories   
+* Top-Level Widgets: a widget without a parent widget is always an independent **window(top-level widget)**.
+* Child Widgets: Non-window widgets are child widgets.
+* Composite Widgets: used as a **container** to group a number of child widgets. the required visual properties - a QFrame.
+    adding child widgets to it, usually managed by a **layout**.
+* Custom Widgets and Painting:  can be used to display custom content that is composed using a series of painting operations with an instance of the QPainter class. Each widget performs all painting operations from within its paintEvent() function.       
+
+### Widget Size Hints and Size Policies
+
+
+### Widget Style Sheets
+
 ## Plugins - QT Charts
