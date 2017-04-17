@@ -25,7 +25,13 @@ QT Programming Language
     * classes for receiving input and printing output.
 
 ### QT Container classes
-    These container classes are designed to be lighter, safer, and easier to use than the STL containers.   
+  These container classes are designed to be lighter, safer, and easier to use than the STL containers.   
+  Features:  
+    * The container classes are **implicitly shared**, they are **reentrant**, and they are optimized for speed, low memory consumption, and minimal inline code expansion, resulting in smaller executables. 
+    * In addition, they are **thread-safe** in situations where they are used as read-only containers by all threads used to access them.
+    * For **traversing** the items stored in a container, you can use one of two types of iterators: 
+        * Java-style iterators: easier to use and provide high-level functionality.
+        * STL-style iterators: more efficient and can be used together with Qt's and STL's generic algorithms.
     
     
 ### Input/Output and Networking
