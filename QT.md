@@ -20,16 +20,11 @@ QT Programming Language
     
 * Input/Output, Resources, and Containers    
     Contains: 
-    * a resource system for organizing application files and assets
-    * a set of containers
+    * a resource system for organizing application files and assets.
+    * a set of containers.
     * classes for receiving input and printing output.
     
     Input/Output and Networking: handle input and output to and from **external devices, processes, files** etc. as well as manipulating *files and directories*.
-    QBuffer:
-        QFile: 
-        QFileInfo:  
-        QFileDevice:  
-        QFileSystemWatcher:
     
 * Qt's model/view framework.
     
