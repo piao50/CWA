@@ -133,6 +133,7 @@ Drawing:
 *.pro: QT += sql
 ```
 
-## QT Widgets
+## QT Widgets   
+The QWidget class is the **base class** of all *user interface objects*.
 
 ## Plugins - QT Charts
