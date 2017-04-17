@@ -135,5 +135,9 @@ Drawing:
 
 ## QT Widgets   
 The QWidget class is the **base class** of all *user interface objects*.
+* The widget is the atom of the user interface.
+* It receives mouse, keyboard and other events from the window system.
+* Paints a representation of itself on the screen.
+* Every widget is **rectangular**, and they are sorted in a Z-order. 
 
 ## Plugins - QT Charts
