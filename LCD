@@ -1,0 +1,9 @@
+//根据液晶数据手册的参数配置
+#define 	HBP  8 		//HSYNC后的无效像素/>=8
+#define 	VBP  8		//VSYNC后的无效行数/>=8
+
+#define 	HSW  2		//HSYNC宽度/>=1DOTCLK
+#define 	VSW  2		//VSYNC宽度/>=1HSYNC
+
+#define 	HFP  8		//HSYNC前的无效像素/>=8
+#define 	VFP  8  	//VSYNC前的无效行数/>=8
