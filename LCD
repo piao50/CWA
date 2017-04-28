@@ -7,3 +7,156 @@
 
 #define 	HFP  8		//HSYNC前的无效像素/>=8
 #define 	VFP  8  	//VSYNC前的无效行数/>=8
+
+void OLED_Init()
+{
+
+	
+   OLED_Reset();      //AMOLED软复位
+   
+   
+   mdelay(10);
+///////////////  OLED  Initial Sequence  //////////////////////
+							
+   Write_Command(0x31);
+   Write_Data(0x08);
+
+   Write_Command(0x32);
+   Write_Data(0x14);
+
+   Write_Command(0x30);
+   Write_Data(0x02);
+
+   Write_Command(0x27);
+   Write_Data(0x01);
+
+   Write_Command(0x12);
+   Write_Data(0x08);
+
+   Write_Command(0x13);
+   Write_Data(0x08);
+
+   Write_Command(0x15);
+   Write_Data(0x00);
+
+   Write_Command(0x16);
+   Write_Data(0x00);       //(1)0x00  24bit-16M   (2)0x01  18bit-262K   (3)0x10  16bit-65K    
+
+   Write_Command(0xef);
+   Write_Data(0xd0);
+   Write_Data(0xe8);
+
+
+//######################Gamma Setting##########################
+
+   Write_Command(0x39);
+   Write_Data(0x44);	
+
+   Write_Command(0x40);
+   Write_Data(0x00);
+
+   Write_Command(0x41);
+   Write_Data(0x3f);
+
+   Write_Command(0x42);
+   Write_Data(0x2a);
+
+   Write_Command(0x43);
+   Write_Data(0x27);
+
+   Write_Command(0x44);		   
+   Write_Data(0x27);
+
+   Write_Command(0x45);
+   Write_Data(0x1f);
+
+   Write_Command(0x46);
+   Write_Data(0x44);
+
+   Write_Command(0x50);	
+   Write_Data(0x00);		
+
+   Write_Command(0x51);
+   Write_Data(0x00);
+
+   Write_Command(0x52);
+   Write_Data(0x17);
+
+   Write_Command(0x53);
+   Write_Data(0x24);
+
+   Write_Command(0x54);
+   Write_Data(0x26);
+
+   Write_Command(0x55);
+   Write_Data(0x1f);
+
+   Write_Command(0x56);
+   Write_Data(0x43);
+
+   Write_Command(0x60);
+   Write_Data(0x00);
+
+   Write_Command(0x61);
+   Write_Data(0x3f);
+
+
+   Write_Command(0x62);
+   Write_Data(0x2a);
+
+   Write_Command(0x63);
+   Write_Data(0x25);
+
+   Write_Command(0x64);
+   Write_Data(0x24);
+
+   Write_Command(0x65);
+   Write_Data(0x1b);
+
+   Write_Command(0x66);
+   Write_Data(0x5c);
+
+
+
+
+
+
+/////////////////Power on setting sequence///////////////
+
+   Write_Command(0x17);
+   Write_Data(0x22);
+
+   Write_Command(0x18);
+   Write_Data(0x33);
+
+
+   Write_Command(0x19);
+   Write_Data(0x03);
+
+   Write_Command(0x1a);
+   Write_Data(0x01);
+
+   Write_Command(0x22);
+   Write_Data(0xa4);
+
+   Write_Command(0x23);
+   Write_Data(0x00);
+
+   Write_Command(0x26);
+   Write_Data(0xa0);
+   
+              
+   
+   Write_Command(0x1d);//Stand-by Off
+   Write_Data(0xa0);
+   
+   
+   mdelay(250);
+   
+
+   Write_Command(0x14);//Display on
+   Write_Data(0x03);
+   
+   Uart_Printf("\nOLED_Init finish !\n");
+
+}
